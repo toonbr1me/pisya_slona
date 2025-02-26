@@ -1,4 +1,3 @@
-
 -- Create Partners table
 CREATE TABLE IF NOT EXISTS Partners (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,13 +15,15 @@ CREATE TABLE IF NOT EXISTS Partners (
     rating INT
 );
 
--- Create Partner_products table
+-- Create Partner_products table with sales history fields
 CREATE TABLE IF NOT EXISTS Partner_products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     partner_id INT NOT NULL,
     product_name VARCHAR(100) NOT NULL,
     product_code VARCHAR(50) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
+    count_product INT DEFAULT 1,
+    date_sale DATE,
     FOREIGN KEY (partner_id) REFERENCES Partners(id) ON DELETE CASCADE
 );
 
@@ -31,5 +32,5 @@ CREATE TABLE IF NOT EXISTS Partner_products (
 -- VALUES ('ООО Пример', 'ООО', 'Москва', 'Ленина', '10', 'Иванов', 'Иван', 'Иванович', '+7(999)123-45-67', 'example@mail.ru', '1234567890', 5);
 
 -- Sample INSERT statements for Partner_products (to be replaced with actual data from Excel)
--- INSERT INTO Partner_products (partner_id, product_name, product_code, price)
--- VALUES (1, 'Продукт 1', 'P001', 1500.00);
+-- INSERT INTO Partner_products (partner_id, product_name, product_code, price, count_product, date_sale)
+-- VALUES (1, 'Продукт 1', 'P001', 1500.00, 10, '2023-05-15');
