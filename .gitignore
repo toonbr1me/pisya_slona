@@ -1,0 +1,36 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# PyQt compiled resource files
+*_rc.py
+
+# IDE files
+.idea/
+.vscode/
+
+# Generated files
+*.pdf
+*.o
+*.so
+*.dll
+
+# Database and log files
+*.db
+*.sqlite
+*.log
+
+# Compiled files
+*.exe
+*.out
+*.app
+
+# OS-specific files
+.DS_Store
+Thumbs.db
